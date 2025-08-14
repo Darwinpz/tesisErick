@@ -1,6 +1,94 @@
-<div class="tab-pane fade show active text-center" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
+<div class="tab-pane fade show active" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
+    <div class="text-center mb-2">
+        <img src="/img/logo.png" class="img-fluid w-50">    
+    </div>
     
-    <img src="/img/logo.png" class="img-fluid w-50">    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Card 1: Cantidad total de inventario -->
+            <div class="col-12 col-md-6 col-lg-3 col-sm-12 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Total Inventario</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="ini_total_inv">0</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-boxes fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Card 2: Inventario operativo -->
+            <div class="col-12 col-md-6 col-lg-3 col-sm-12 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Operativo</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="ini_operativo_inv">0</div>
+                                <div class="mt-2 text-xs text-muted">
+                                    <span class="text-success mr-2" id="ini_porcentaje_inv_operativo">0% del total</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-check-circle fa-2x text-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Inventario regular -->
+            <div class="col-12 col-md-6 col-lg-3 col-sm-12 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                    Regular</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="ini_regular_inv">0</div>
+                                <div class="mt-2 text-xs text-muted">
+                                    <span class="text-warning mr-2" id="ini_porcentaje_inv_regular">0% del total</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-exclamation-triangle fa-2x text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Inventario para baja -->
+            <div class="col-12 col-md-6 col-lg-3 col-sm-12 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                    Para Baja</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="ini_baja_inv">0</div>
+                                <div class="mt-2 text-xs text-muted">
+                                    <span class="text-danger mr-2" id="ini_porcentaje_inv_baja">3.5% del total</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-times-circle fa-2x text-danger"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/inicio.js"></script>
 
 </div>

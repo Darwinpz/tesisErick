@@ -10,6 +10,58 @@ import uuid
 
 db = MongoDb().db()
 
+def ver_info_inventario(request):
+    
+    if request.method == 'POST':
+        try:
+
+            if val.validar_session(session):
+
+                dir_inv = "inventario_"+session["tipo"]
+
+                consulta = [
+                        {
+                            '$facet': {
+                                'operativo': [
+                                    {'$match': {'estado': 'OPERATIVO'}},
+                                    {'$count': 'count'}
+                                ],
+                                'regular': [
+                                    {'$match': {'estado': 'REGULAR'}},
+                                    {'$count': 'count'}
+                                ],
+                                'baja': [
+                                    {'$match': {'estado': 'BAJA'}},
+                                    {'$count': 'count'}
+                                ],
+                                'total': [
+                                    {'$count': 'total'}
+                                ]
+                            }
+                        },
+                        {
+                            '$project': {
+                                'operativo': {'$ifNull': [{'$arrayElemAt': ['$operativo.count', 0]}, 0]},
+                                'regular': {'$ifNull': [{'$arrayElemAt': ['$regular.count', 0]}, 0]},
+                                'baja': {'$ifNull': [{'$arrayElemAt': ['$baja.count', 0]}, 0]},
+                                'total': {'$arrayElemAt': ['$total.total', 0]}
+                            }
+                        }
+                    ]
+
+                info_inventario = db[dir_inv].aggregate(consulta)
+
+                data = {"data": list(info_inventario)[0]}
+                return json.dumps(data, default=str), 200
+            else:
+                return jsonify({"message": "Debes iniciar sesión"}), 403
+        except Exception as e:
+            hist.guardar_historial(
+                "ERROR", "VISUALIZAR", 'ERROR AL VISUALIZAR INFORMACIÓN DEL INVENTARIO - "'+str(e)+'"')
+            return jsonify({"message": "Error al visualizar información el inventario"}), 404
+    else:
+        return jsonify({"message": "Petición Incorrecta"}), 500
+
 def save_inventario(request):
 
     if request.method == 'POST':
@@ -192,7 +244,6 @@ def buscar_inventarios(request):
             else:
                 return jsonify({"message": "Debes iniciar sesión"}), 403
         except Exception as e:
-            print(e)
             hist.guardar_historial(
                 "ERROR", "VISUALIZAR", 'ERROR AL VISUALIZAR TODO EL INVENTARIO - "'+str(e)+'"')
             return jsonify({"message": "Error al Visualizar todo el Inventario"}), 404

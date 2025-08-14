@@ -58,7 +58,6 @@ def inv_login():
 def inv_principal():
     return logi.principal()
 
-
 @app.route('/inventario/salir')
 def inv_salir():
     return logi.cerrar_sesion()
@@ -235,6 +234,12 @@ def upsi_del_cargos():
 
 
 # ----- INVENTARIO ------
+
+@app.route('/inventario/ver_info', methods=['POST'])
+def inv_info_inventario():
+    return inv.ver_info_inventario(request)
+
+
 @app.route('/inventario/save_inventario', methods=['POST'])
 def inv_save_inventario():
     return inv.save_inventario(request)
