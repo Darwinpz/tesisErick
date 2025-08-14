@@ -7,9 +7,22 @@ import controllers.historyCtl as hist
 
 db = MongoDb().db()
 
+meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+         "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"]
+semanas = ["LUNES", "MARTES", "MIÉRCOLES",
+           "JUEVES", "VIERNES", "SÁBADO", "DOMINGO"]
+
 def inicio():
     return render_template('/views/index.html')
 
+def preguntas():
+    return render_template('/views/preguntas.html')
+
+def contrato():
+    fecha = datetime.now()
+    arreglo = {"dia": fecha.day, "anio": fecha.year,
+               "mes": meses[fecha.month-1], "semana": semanas[fecha.weekday()]}
+    return render_template('/views/contrato.html', fecha=arreglo)
 
 def del_foto(request):
 

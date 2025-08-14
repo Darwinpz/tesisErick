@@ -169,13 +169,44 @@
                     <p class="mb-0">Verifica si tenemos cobertura en tu dirección</p>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg" placeholder="Ingresa tu dirección">
-                    <button class="btn btn-primary" type="button">Verificar</button>
+                    <input type="text" id="cantonInput" class="form-control form-control-lg" placeholder="Ingresa tu cantón">
+                    <button class="btn btn-primary" type="button" id="verificarBtn">Verificar</button>
                 </div>
+                <div id="disponibilidadMensaje" class="mt-2"></div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('verificarBtn').addEventListener('click', function() {
+    const cantonInput = document.getElementById('cantonInput').value.trim();
+    const mensajeDiv = document.getElementById('disponibilidadMensaje');
+    
+    // Cantones con disponibilidad
+    const cantonesDisponibles = ['Machala', 'Pasaje'];
+    
+    // Limpiar mensaje anterior
+    mensajeDiv.innerHTML = '';
+    mensajeDiv.className = 'mt-2'; // Resetear clases
+    
+    if (!cantonInput) {
+        mensajeDiv.innerHTML = '<div class="alert alert-warning">Por favor ingresa un cantón</div>';
+        return;
+    }
+    
+    // Verificar disponibilidad (insensible a mayúsculas/minúsculas)
+    const cantonEncontrado = cantonesDisponibles.find(canton => 
+        canton.toLowerCase() === cantonInput.toLowerCase()
+    );
+    
+    if (cantonEncontrado) {
+        mensajeDiv.innerHTML = `<div class="alert alert-success"><b>¡Disponible!</b> Tenemos cobertura en <b>${cantonEncontrado}</b></div>`;
+    } else {
+        mensajeDiv.innerHTML = `<div class="alert alert-danger"><b>Lo sentimos</b>, no tenemos cobertura en <b>${cantonInput}</b>. <br> Cantones disponibles: <b>${cantonesDisponibles.join(', ')}</b></div>`;
+    }
+});
+</script>
 
 <!-- Testimonios -->
 <section class="py-5 bg-light">

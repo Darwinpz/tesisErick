@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from dotenv import load_dotenv
 import controllers.indexCtl as ini
-import controllers.loginCtl as inven
+import controllers.loginCtl as logi
 import controllers.historyCtl as hist
 import controllers.modeloCtl as mod
 import controllers.marcaCtl as mar
@@ -31,9 +31,17 @@ def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     return response
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
     return ini.inicio()
+
+@app.route('/preguntas', methods=['GET'])
+def preguntas():
+    return ini.preguntas()
+
+@app.route('/contrato', methods=['GET'])
+def contrato():
+    return ini.contrato()
 
 @app.route('/del_foto', methods=['POST'])
 def index_del_foto():
@@ -43,17 +51,17 @@ def index_del_foto():
 
 @app.route('/inventario', methods=['GET', 'POST'])
 def inv_login():
-    return inven.login(request)
+    return logi.login(request)
 
 
 @app.route('/inventario/principal', methods=['GET'])
 def inv_principal():
-    return inven.principal()
+    return logi.principal()
 
 
 @app.route('/inventario/salir')
 def inv_salir():
-    return inven.cerrar_sesion()
+    return logi.cerrar_sesion()
 
 
 # ----- USUARIOS ---------

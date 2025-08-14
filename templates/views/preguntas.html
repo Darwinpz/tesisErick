@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <a type="button" style="position: absolute;" href="/" class="btn btn-outline-light mt-3"><i class="fas fa-angle-left"></i></a>
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-4">Preguntas Frecuentes</h1>
+                <p class="lead mb-4">Encuentra respuestas a las dudas más comunes sobre nuestros servicios de internet</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#faq-general" class="btn btn-light btn-lg px-4">General</a>
+                    <a href="#faq-tecnico" class="btn btn-outline-light btn-lg px-4">Técnico</a>
+                    <a href="#faq-pagos" class="btn btn-outline-light btn-lg px-4">Pagos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ General -->
+<section id="faq-general" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Preguntas Generales</h2>
+            <p class="text-muted">Información básica sobre nuestros servicios</p>
+        </div>
+        
+        <div class="accordion" id="accordionGeneral">
+            <!-- Pregunta 1 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        ¿Qué zonas cubren con su servicio?
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                        <p>Nuestra cobertura actual incluye las principales ciudades y zonas urbanas del país. Puedes verificar si tu área está cubierta ingresando tu dirección en nuestro <a href="/#cobertura" class="text-primary">verificador de cobertura</a> o contactando a nuestro equipo de ventas.</p>
+                        <p class="mb-0">Estamos expandiendo constantemente nuestra red para llegar a más lugares.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 2 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        ¿Cuál es la diferencia entre los planes?
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                        <p>Nuestros planes varían principalmente en:</p>
+                        <ul>
+                            <li class="mb-2"><strong>Velocidad de conexión:</strong> Desde 50 Mbps hasta 200 Mbps</li>
+                            <li class="mb-2"><strong>Tipo de tecnología:</strong> Los planes superiores usan fibra óptica exclusiva</li>
+                            <li class="mb-2"><strong>Soporte técnico:</strong> Prioridad en la atención para planes más altos</li>
+                            <li class="mb-2"><strong>Beneficios adicionales:</strong> Como meses gratis o instalación sin costo</li>
+                        </ul>
+                        <p class="mb-0">Puedes comparar todos los detalles en nuestra <a href="/#planes" class="text-primary">sección de planes</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        ¿Qué incluye la instalación?
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                        <p>Nuestro servicio de instalación estándar incluye:</p>
+                        <ul>
+                            <li class="mb-2">Configuración del módem/router</li>
+                            <li class="mb-2">Conexión de cables necesarios</li>
+                            <li class="mb-2">Pruebas de velocidad iniciales</li>
+                            <li class="mb-2">Asesoría básica sobre el uso del servicio</li>
+                        </ul>
+                        <p class="mb-0">Para los planes Premium, la instalación incluye además configuración avanzada de red WiFi y optimización para múltiples dispositivos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Técnico -->
+<section id="faq-tecnico" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Preguntas Técnicas</h2>
+            <p class="text-muted">Soluciones a problemas comunes</p>
+        </div>
+        
+        <div class="accordion" id="accordionTecnico">
+            <!-- Pregunta 1 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        ¿Qué hacer si el internet está lento?
+                    </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionTecnico">
+                    <div class="accordion-body">
+                        <p>Sigue estos pasos para solucionar problemas de velocidad:</p>
+                        <ol>
+                            <li class="mb-2">Reinicia tu módem/router (apágalo por 30 segundos y vuélvelo a encender)</li>
+                            <li class="mb-2">Conecta directamente un dispositivo con cable Ethernet para descartar problemas WiFi</li>
+                            <li class="mb-2">Realiza una prueba de velocidad en <a href="https://www.speedtest.net/es" class="text-primary">speedtest.net</a></li>
+                            <li class="mb-2">Verifica que no haya descargas o actualizaciones en segundo plano</li>
+                            <li class="mb-2">Si persiste el problema, contacta a nuestro soporte técnico</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 2 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        ¿Cómo mejorar la señal WiFi en mi hogar?
+                    </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionTecnico">
+                    <div class="accordion-body">
+                        <p>Recomendaciones para optimizar tu WiFi:</p>
+                        <ul>
+                            <li class="mb-2"><strong>Ubicación del router:</strong> Colócalo en un lugar central, elevado y alejado de obstáculos y dispositivos electrónicos</li>
+                            <li class="mb-2"><strong>Actualización de firmware:</strong> Mantén tu router actualizado</li>
+                            <li class="mb-2"><strong>Canales WiFi:</strong> Usa aplicaciones para identificar el canal menos congestionado</li>
+                            <li class="mb-2"><strong>Extensores de señal:</strong> Considera adquirir nuestros repetidores WiFi para áreas grandes</li>
+                        </ul>
+                        <p class="mb-0">Para planes Premium ofrecemos un servicio de optimización WiFi sin costo adicional.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        ¿Qué requisitos necesito para el servicio?
+                    </button>
+                </h3>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionTecnico">
+                    <div class="accordion-body">
+                        <p>Los requisitos básicos son:</p>
+                        <ul>
+                            <li class="mb-2">Estar en una zona con cobertura</li>
+                            <li class="mb-2">Tener toma eléctrica cerca del punto de instalación</li>
+                            <li class="mb-2">Presentar identificación válida para la contratación</li>
+                            <li class="mb-2">Para fibra óptica: Permiso para instalación exterior si es necesario</li>
+                        </ul>
+                        <p class="mb-0">Nuestro equipo técnico evaluará las condiciones específicas durante la visita de instalación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Pagos -->
+<section id="faq-pagos" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Pagos y Facturación</h2>
+            <p class="text-muted">Información sobre cobros y métodos de pago</p>
+        </div>
+        
+        <div class="accordion" id="accordionPagos">
+            <!-- Pregunta 1 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        ¿Qué métodos de pago aceptan?
+                    </button>
+                </h3>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionPagos">
+                    <div class="accordion-body">
+                        <p>Aceptamos múltiples formas de pago:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="h6">Pagos en línea:</h5>
+                                <ul>
+                                    <li class="mb-2">Tarjetas de crédito/débito (Visa, MasterCard, Diners)</li>
+                                    <li class="mb-2">Transferencias bancarias</li>
+                                    <li class="mb-2">Pago móvil (a través de nuestra app)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="h6">Pagos presenciales:</h5>
+                                <ul>
+                                    <li class="mb-2">Oficinas autorizadas</li>
+                                    <li class="mb-2">Puntos de pago en supermercados</li>
+                                    <li class="mb-2">Bancos asociados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 2 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        ¿Hay cargos por instalación o equipo?
+                    </button>
+                </h3>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionPagos">
+                    <div class="accordion-body">
+                        <p>Nuestra política de cargos es:</p>
+                        <ul>
+                            <li class="mb-2"><strong>Plan Básico:</strong> $50 por instalación (equipo incluido)</li>
+                            <li class="mb-2"><strong>Plan Recomendado:</strong> $30 por instalación (equipo incluido)</li>
+                            <li class="mb-2"><strong>Plan Premium:</strong> Instalación y equipo sin costo</li>
+                            <li class="mb-2"><strong>Todos los planes:</strong> Sin costo por el router básico (cargos aplican por equipos adicionales o avanzados)</li>
+                        </ul>
+                        <p class="mb-0">Promociones especiales pueden incluir instalación gratis - consulta con nuestro equipo de ventas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingNine">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        ¿Cómo puedo cambiar mi plan actual?
+                    </button>
+                </h3>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionPagos">
+                    <div class="accordion-body">
+                        <p>Para cambiar de plan sigue estos pasos:</p>
+                        <ol>
+                            <li class="mb-2">Ingresa a tu área de cliente en nuestro portal web</li>
+                            <li class="mb-2">Selecciona la opción "Cambiar de plan"</li>
+                            <li class="mb-2">Elige el nuevo plan que deseas contratar</li>
+                            <li class="mb-2">Revisa los cambios en tu facturación</li>
+                            <li class="mb-2">Confirma el cambio</li>
+                        </ol>
+                        <p class="mb-0">También puedes contactar a nuestro servicio al cliente para asistencia en el proceso. Los cambios de plan pueden estar sujetos a revisión técnica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de contacto -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bold mb-4">¿No encontraste tu respuesta?</h2>
+                <p class="lead mb-4">Nuestro equipo de soporte está listo para ayudarte con cualquier duda adicional que tengas.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="tel:+593979022007" class="btn btn-light btn-lg px-4">
+                        Llamar al soporte
+                    </a>
+                    <a href="https://wa.me/593979022007" class="btn btn-outline-light btn-lg px-4">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
