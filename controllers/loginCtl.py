@@ -51,7 +51,7 @@ def login(request):
                 session["id"] = ObjectId().__str__()
                 session["cedula"] = "0000000000"
                 session["nombre"] = "SUPER-ADMIN"
-                session["tipo"] = "AFIVANET"
+                session["tipo"] = "AVIFANET"
                 session["rol"] = "Super-Admin"
 
                 hist.guardar_historial(

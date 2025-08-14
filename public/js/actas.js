@@ -188,7 +188,7 @@ $('#actaModal').on('show.bs.modal', function (event) {
 
         url: '/inventario/ver_servidores',
         type: 'POST',
-        data: { s_validar: "AFIVANET" },
+        data: { s_validar: "AVIFANET" },
 
         success: function (response) {
 

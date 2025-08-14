@@ -474,7 +474,7 @@ def ver_acta(id=None):
                 
                 elements.append(titulo("Acta de Entrega - Recepción"))
             
-                elements.append(Paragraph("En la Ciudad de Machala en las instalaciones de AfivaNet - El Oro "
+                elements.append(Paragraph("En la Ciudad de Machala en las instalaciones de AvifaNet - El Oro "
                                       +", con fecha "+fecha.strftime("%d de %B de %Y")+", se procede a la suscripción del ACTA DE ENTREGA - RECEPCIÓN, entre "+acta["recibe"]["nombres"]
                                       +", "+acta["recibe"]["cargo"]["nombre"] +" de la "+ acta["recibe"]["area"]["nombre"] +", y por otra parte "+ acta["entrega"]["nombres"] 
                                       +", "+acta["entrega"]["cargo"]["nombre"] +" de la "+ acta["entrega"]["area"]["nombre"] +", entregando los siguientes activos y bienes de acuerdo al siguiente detalle:",
