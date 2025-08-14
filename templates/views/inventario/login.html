@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+
+    <a type="button" style="position: absolute;" href="/" class="btn btn-success mt-3"><i class="fas fa-home"></i> Inicio</a>
+
+    <div class="row align-items-center justify-content-center vh-100">
+
+        <div class="col col-12 col-md-12 col-sm-12 col-lg-7 text-center">
+
+            <img src="/img/logo.png" class="w-50">
+            <h5 class="text-center mt-2"><b>SISTEMA DE INVENTARIO - AFIVANET 2025</b></h5>
+
+        </div>
+
+        <div class="col col-12 col-md-12 col-sm-12 col-lg-5">
+
+            <div class="card p-3 border border-primary" style="box-shadow: 0 2px 10px rgba(0,0,0,.075);">
+
+                <h4 class="text-center"><b>Ingreso al Sistema de Inventario</b></h4>
+
+                <div class="card-body">
+
+                    <form class="row g-3" method="POST">
+
+                        <div class="col-md-12">
+                            <input type="text" class="form-control fs-5 border border-dark" name="usuario" placeholder="Usuario" value=""
+                                required>
+                        </div>
+                        <div class="col-md-12">
+
+                            <input type="password" class="form-control fs-5 border border-dark" name="clave"
+                                placeholder="Clave de seguridad" value="" required>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-block fs-4" type="submit">Iniciar Sesión</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <p class="pt-3 text-center"><b>Autor:</b> Erick Ávila - AfivaNet 2025</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

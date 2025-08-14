@@ -1,0 +1,103 @@
+
+<div class="tab-pane fade" id="v-pills-histories" role="tabpanel" aria-labelledby="v-pills-histories-tab">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-history"><i class="fa fa-repeat"></i> Actualizar Historial
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_histories.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyModalLabel"><b>Historial</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="modal-body row g-3">
+
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Fecha de Acción:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_fecha"
+                                name="hist_fecha" style="background-color: #e9ecef;"></label>
+                        </div>
+
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Tipo:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_tipo"
+                                name="hist_tipo" style="background-color: #e9ecef;"></label>
+                        </div>
+                        
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Acción:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_accion"
+                                name="hist_accion" style="background-color: #e9ecef;"></label>
+                        </div>
+
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>IP:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_ip"
+                                name="hist_ip" style="background-color: #e9ecef;"></label>
+                        </div>
+                        
+
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Tipo Usuario:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_tipo_user"
+                                name="hist_tipo_user" style="background-color: #e9ecef;"></label>
+                        </div>
+                        
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Rol:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_rol"
+                                name="hist_rol" style="background-color: #e9ecef;"></label>
+                        </div>
+
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Cédula:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_cedula"
+                                name="hist_cedula" style="background-color: #e9ecef;"></label>
+                        </div>
+
+                        <div class="col col-lg-8 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Nombre:</b></label>
+                            <label type="text" class="form-control fs-5 border border-dark" id="hist_nombre"
+                                name="hist_nombre" style="background-color: #e9ecef;"></label>
+                        </div>
+
+            
+                        <div class="col col-lg-12 col-md-12 col-sm-12">
+                            <label class="form-label fs-5"><b>Mensaje:</b></label>
+                            <textarea class="form-control fs-5 border border-dark" id="hist_mensaje"
+                                name="hist_mensaje" style="background-color: #e9ecef;"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/histories.js"></script>
+
+</div>

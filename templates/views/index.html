@@ -1,0 +1,404 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12">
+                <h1 class="display-4 fw-bold mb-4">Internet de alta velocidad para tu hogar o negocio</h1>
+                <p class="lead mb-4">Disfruta de conexión estable, rápida y segura con los mejores planes adaptados a tus necesidades.</p>
+                <div class="d-flex gap-3 mb-2">
+                    <a href="#planes" class="btn btn-light btn-lg px-4">Ver planes</a>
+                    <a href="#contacto" class="btn btn-outline-light btn-lg px-4">Contáctanos</a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12">
+                <img src="/img/logo.png" alt="Internet de alta velocidad" class="img-fluid rounded shadow bg-white">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Beneficios -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">¿Por qué elegirnos?</h2>
+            <h5 class="text-muted">Ofrecemos el mejor servicio con ventajas exclusivas</h5>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="fas fa-bolt fs-1 text-warning"></i>
+                        </div>
+                        <h3 class="h4">Velocidad garantizada</h3>
+                        <p class="text-muted">Navega sin interrupciones con nuestra red de fibra óptica de última generación.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="fas fa-headset fs-1 text-primary"></i>
+                        </div>
+                        <h3 class="h4">Soporte 24/7</h3>
+                        <p class="text-muted">Asistencia técnica disponible todo el día, todos los días del año.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="fas fa-coins fs-1 text-success"></i>
+                        </div>
+                        <h3 class="h4">Precios competitivos</h3>
+                        <p class="text-muted">Planes accesibles sin sacrificar calidad en el servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Planes -->
+<section id="planes" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Nuestros Planes de Internet</h2>
+            <h5 class="text-muted">Elige el que mejor se adapte a tus necesidades</h5>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-header bg-primary py-3 border-0 text-center">
+                        <h3 class="fw-bold mb-0 text-white">Básico</h3>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title pricing-card-title">$29.99<small class="text-muted fw-light">/mes</small></h4>
+                        <ul class="list-unstyled mt-3 mb-3">
+                            <li class="mb-2">50 Mbps de velocidad</li>
+                            <li class="mb-2">Conexión estable</li>
+                            <li class="mb-2">Soporte básico</li>
+                            <li class="mb-2">WiFi incluido</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a type="button" 
+                        href="https://wa.me/593979022007?text=¡Hola!%20%F0%9F%91%8B%20Me%20interesa%20el%20*Plan%20Básico*%20de%2050Mbps%20%F0%9F%92%BB%0A%0A•%20Quiero%20más%20información%0A•%20Deseo%20contratarlo%0A%0AMi%20dirección:%20"
+                        target="_blank"
+                        class="w-100 btn btn-outline-primary btn-lg">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-lg">
+                    <div class="card-header bg-success text-white py-3 border-0 text-center">
+                        <h3 class="fw-bold mb-0 text-white">Recomendado</h3>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title pricing-card-title">$49.99<small class="text-muted fw-light">/mes</small></h4>
+                        <ul class="list-unstyled mt-3 mb-3">
+                            <li class="mb-2">100 Mbps de velocidad</li>
+                            <li class="mb-2">Fibra óptica</li>
+                            <li class="mb-2">Soporte prioritario</li>
+                            <li class="mb-2">WiFi avanzado</li>
+                            <li class="mb-2">2 meses gratis al año</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a type="button" 
+                        href="https://wa.me/593979022007?text=¡Hola!%20%F0%9F%91%8B%20Quiero%20el%20*Plan%20Recomendado*%20de%20100Mbps%20%F0%9F%9A%80%0A%0A•%20Necesito%20detalles%0A•%20Deseo%20contratar%0A%0AMi%20dirección:%20"
+                        target="_blank"
+                        class="w-100 btn btn-outline-success btn-lg">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-header bg-warning py-3 border-0 text-center">
+                        <h3 class="fw-bold mb-0 text-white">Premium</h3>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title pricing-card-title">$79.99<small class="text-muted fw-light">/mes</small></h4>
+                        <ul class="list-unstyled mt-3 mb-3">
+                            <li class="mb-2">200 Mbps de velocidad</li>
+                            <li class="mb-2">Fibra óptica simétrica</li>
+                            <li class="mb-2">Soporte VIP 24/7</li>
+                            <li class="mb-2">WiFi premium</li>
+                            <li class="mb-2">3 meses gratis al año</li>
+                            <li class="mb-2">Instalación gratis</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a type="button" 
+                        href="https://wa.me/593979022007?text=¡Hola!%20%F0%9F%91%8B%20Solicito%20el%20*Plan%20Premium*%20de%20200Mbps%20%E2%9A%99%EF%B8%8F%0A%0A•%20Info%20adicional%0A•%20Contratación%0A%0AMi%20dirección:%20"
+                        target="_blank"
+                        class="w-100 btn btn-outline-warning btn-lg">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cobertura -->
+<section id="cobertura" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 mb-4 mb-lg-0 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Cantones_de_El_Oro.png" alt="Mapa de cobertura" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12">
+                <h2 class="fw-bold mb-4">Amplia cobertura en tu región</h2>
+                <p class="lead mb-4">Nuestra red llega a más del 70% de los hogares y negocios en la zona, con expansión constante.</p>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-2 me-3">
+                        <i class="fas fa-certificate text-primary"></i>
+                    </div>
+                    <p class="mb-0">Verifica si tenemos cobertura en tu dirección</p>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Ingresa tu dirección">
+                    <button class="btn btn-primary" type="button">Verificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonios -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Lo que dicen nuestros clientes</h2>
+            <h5 class="text-muted">Experiencias reales de usuarios satisfechos</h5>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="card-text mb-4">"Desde que contraté el servicio premium mi negocio ha mejorado mucho. La conexión es estable y rápida siempre."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-utensils text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Carlos Méndez</h6>
+                                <small class="text-muted">Dueño de restaurante</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="card-text mb-4">"Excelente servicio al cliente. Cuando tuve un problema lo resolvieron en menos de una hora. Muy recomendable."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-school text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Ana Rodríguez</h6>
+                                <small class="text-muted">Profesora universitaria</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-half text-warning"></i>
+                        </div>
+                        <p class="card-text mb-4">"Buena relación calidad-precio. La velocidad es consistente incluso en horas pico. Solo mejoraría los tiempos de instalación."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-pen text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Luisa Fernández</h6>
+                                <small class="text-muted">Freelancer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 col-md-12 col-sm-12 text-center mb-5">
+                <h2 class="fw-bold">Contáctanos</h2>
+                <h4 class="text-muted">¿Tienes dudas? Escríbenos y te responderemos a la brevedad</h4>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 ">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h3 class="h4 mb-4">Información de contacto</h3>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-map text-danger"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Dirección</h5>
+                                <h5 class="text-muted mb-0">Av. 25 de Junio, Machala</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-phone text-success"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Teléfono</h5>
+                                <h5 class="text-muted mb-0">+593 097 902 2007</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Email</h5>
+                                <h5 class="text-muted mb-0">erick@afivanet.com</h5>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fab fa-facebook text-primary" style="font-size:20px;"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Facebook</h5>
+                                <h5 class="text-muted mb-0">@afivanet</h5>
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex p-3 me-3">
+                                <i class="fab fa-instagram" style="font-size:20px;"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Instagram</h5>
+                                <h5 class="text-muted mb-0">@afivanet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <img src="/img/publicidad.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="h4 mb-4">Ubicación Google Maps</h3>
+                        <div class="d-flex text-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63733.988363417135!2d-80.0022291017081!3d-3.2568586598047906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x90330e252f104ed1%3A0xea4e189f2b2da97e!2sMachala!5e0!3m2!1ses!2sec!4v1755117603368!5m2!1ses!2sec" class="w-100" height="300px"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h3 class="h4 mb-4">AfivaNet</h3>
+                <p class="text-muted">Proveedores de internet de alta velocidad con más de 10 años de experiencia en el mercado.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-4">
+                <h3 class="h5 mb-4">Enlaces</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Inicio</a></li>
+                    <li class="mb-2"><a href="#planes" class="text-muted text-decoration-none">Planes</a></li>
+                    <li class="mb-2"><a href="#cobertura" class="text-muted text-decoration-none">Cobertura</a></li>
+                    <li class="mb-2"><a href="#contacto" class="text-muted text-decoration-none">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-4">
+                <h3 class="h5 mb-4">Legal</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="/contrato" class="text-muted text-decoration-none">Contrato de servicio</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-4">
+                <h3 class="h5 mb-4">Soporte</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="/preguntas" class="text-muted text-decoration-none">Preguntas frecuentes</a></li>
+                    <li class="mb-2"><a href="/inventario" class="text-muted text-decoration-none">Sistema de Inventario</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4 bg-secondary">
+        
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0 text-muted">&copy; 2025 AfivaNet. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0 text-muted">Desarrollado por <i class="bi bi-heart-fill text-danger"></i> Erick Ávila</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,122 @@
+<div class="tab-pane fade" id="v-pills-usuarios" role="tabpanel" aria-labelledby="v-pills-usuarios-tab">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#usuarioModal">
+                <i class="fas fa-user-plus"></i> Agregar Usuario
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-usuarios"><i class="fa fa-repeat"></i> Actualizar Usuarios
+            </button>
+
+            <a type="button" class="btn btn-secondary btn-block mb-1" href="/rpt/usuarios" target="_blank" ><i class="fas fa-print"></i> Reporte de Usuarios</a></a>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_usuarios.html' %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="usuarioModalLabel"><b>Agregar Usuario</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form action="post" id="form_usuario">
+                    <div class="modal-body">
+
+                        <div class="modal-body row g-3">
+
+                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Trabajador:</b></label>
+                                <select class="form-select fs-5 border border-dark" id="u_cmb_servidor" name="u_servidor" required>
+                                    <option disabled selected value="">Selecciona</option>
+                                </select>
+                                
+                                <input type="text" class="form-control fs-5 border border-dark" id="u_servidor"
+                                    disabled required>
+                                
+                                <input type="text" class="form-control fs-5 border border-dark" id="u_cedula"
+                                    name="u_cedula" readonly required style="display: none;">
+                            </div>
+
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Usuario:</b></label>
+                                <input type="text" class="form-control fs-5 border border-dark" id="u_nombre"
+                                    name="u_nombre" placeholder="Ejem. nombre_usuario" value="" required>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Estado:</b></label>
+                                <select class="form-select fs-5 border border-dark" id="u_estado" name="u_estado" required>
+                                    <option disabled selected value="">Selecciona</option>
+                                    <option value="ACTIVO">ACTIVO</option>
+                                    <option value="INACTIVO">INACTIVO</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Rol:</b></label>
+                                <select class="form-select fs-5 border border-dark" id="u_rol" name="u_rol" required>
+                                    <option disabled selected value="">Selecciona</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Operador">Operador</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Clave:</b></label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-5" id="u_clave" name="u_clave" value=""
+                                        placeholder="Clave de Acceso" required>
+                                    <span class="input-group-text btn_ver_clave" style="cursor: pointer;"><i
+                                            class="fa fa-eye-slash"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label class="form-label fs-5"><b>* Repetir Clave:</b></label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-5" id="u_rep_clave" name="u_rep_clave" value=""
+                                        placeholder="Confirmar Clave" required>
+                                    <span class="input-group-text btn_ver_clave" style="cursor: pointer;"><i
+                                            class="fa fa-eye-slash"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <span id="mensaje_usuario"></span>
+                        
+                        <button type="submit" class="btn btn-success" id="save-usuario"><i class="fas fa-save"></i> Guardar</button>
+
+                        <button type="submit" class="btn btn-primary" id="edit-usuario"><i class="fas fa-save"></i> Editar</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/usuarios.js"></script>
+
+</div>

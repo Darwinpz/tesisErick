@@ -1,0 +1,76 @@
+<div class="tab-pane fade" id="v-pills-areas" role="tabpanel" aria-labelledby="v-pills-areas-tab">
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal" data-bs-target="#areaModal">
+                <i class="fas fa-building"></i> Agregar Área
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-areas"><i class="fa fa-repeat"></i> Actualizar Areas
+            </button>
+
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_areas.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="areaModal" tabindex="-1" aria-labelledby="areaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="areaModalLabel"><b>Agregar Área</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" id="form_area">
+                    <div class="modal-body">
+
+                        <div class="modal-body row g-3">
+
+                            <div class="col-md-12">
+                                <label class="form-label fs-5"><b>* Abreviatura del Área:</b></label>
+                                <input type="text" class="form-control fs-5 border border-dark" id="a_abreviatura"
+                                    name="a_abreviatura" placeholder="Ejem. TICS" value="" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label fs-5"><b>* Nombre del Área:</b></label>
+                                <textarea type="text" class="form-control fs-5 border border-dark" id="a_nombre"
+                                    name="a_nombre" placeholder="Ejem. TECNOLOGIAS DE LA INFORMACIÓN..." required></textarea>
+                            </div>
+
+                            <input type="text" class="form-control fs-5 border border-dark" id="a_codigo"
+                            name="a_codigo" value="" style="display: none;" >
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <span id="mensaje_area"></span>
+
+                        <button type="submit" class="btn btn-success" id="save-area"><i class="fas fa-save"></i> Guardar</button>
+
+                        <button type="submit" class="btn btn-primary" id="edit-area"><i class="fas fa-save"></i> Editar</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/areas.js"></script>
+
+</div>

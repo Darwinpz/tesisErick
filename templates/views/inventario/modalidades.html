@@ -1,0 +1,74 @@
+<div class="tab-pane fade" id="v-pills-modalidades" role="tabpanel" aria-labelledby="v-pills-modalidades-tab">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#modalidadModal">
+                <i class="fas fa-file-contract"></i> Agregar Modalidad
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-modalidades"><i class="fa fa-repeat"></i> Actualizar Modalidades
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_modalidades.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalidadModal" tabindex="-1" aria-labelledby="modalidadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalidadModalLabel"><b>Agregar Modalidad</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" id="form_modalidad">
+                    
+                    <div class="modal-body">
+
+                        <div class="modal-body row g-3">
+
+                            <div class="col-md-12">
+                                <label class="form-label fs-5"><b>* Nombre de la Modalidad:</b></label>
+                                <input type="text" class="form-control fs-5 border border-dark" id="m_nombre"
+                                    name="m_nombre" placeholder="Ejem. PLANTA - OCASIONAL" value="" required>
+                            </div>
+                            
+                            <input type="text" class="form-control fs-5 border border-dark" id="m_codigo"
+                            name="m_codigo" value="" style="display: none;" >
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <span id="mensaje_modalidad"></span>
+
+                        <button type="submit" class="btn btn-success" id="save-modalidad"><i class="fas fa-save"></i> Guardar</button>
+
+                        <button type="submit" class="btn btn-primary" id="edit-modalidad"><i class="fas fa-save"></i> Editar</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/modalidades.js"></script>
+
+</div>

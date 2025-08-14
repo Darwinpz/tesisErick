@@ -1,0 +1,163 @@
+<div class="tab-pane fade" id="v-pills-servidores" role="tabpanel" aria-labelledby="v-pills-servidores-tab">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#servidorModal">
+                <i class="fas fa-vest"></i> Agregar Trabajador
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-servidores"><i class="fa fa-repeat"></i> Actualizar Trabajador
+            </button>
+
+            <a type="button" class="btn btn-secondary btn-block mb-1" href="/rpt/servidores" target="_blank" ><i class="fas fa-print"></i> Reporte de Trabajadores</a></a>
+            
+            <a type="button" class="btn btn-warning btn-block mb-1" href="/carnets" target="_blank" ><i class="fas fa-print"></i> Carnets de Trabajadores</a></a>
+            
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_servidores.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="servidorModal" tabindex="-1" aria-labelledby="servidorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="servidorModalLabel"><b>Agregar Trabajador</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="post" id="form_servidor" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <div class="modal-body row" style="align-items: center;">
+
+                            <div class="col col-lg-3 col-sm-12 mb-2">
+
+                                <div class="card" id="foto-servidor">
+
+                                    <div class="border border-dark d-flex justify-content-center" style="height:300px">
+
+                                        <img id="img_servidor" src="/img/perfil.jpg"
+                                            class="img-fluid">
+
+                                    </div>
+
+                                    <input type="file" accept="image/*" name="s_foto"
+                                        class="form-control border border-dark mt-2"
+                                        onchange="document.getElementById('img_servidor').src = window.URL.createObjectURL(this.files[0])">
+
+                                </div>
+
+                            </div>
+
+                            <div class="col col-lg-9">
+
+                                <div class="row g-3">
+
+                                    <div class="col-lg-9 col-md-12 col-sm-12" id="s_div_cedula">
+                                        <label class="form-label fs-5"><b>* Cedula: <span
+                                                    id="mensaje_serv_buscador"></span></b></label>
+                                        <input type="text" class="form-control fs-5 border border-dark" id="s_cedula"
+                                            name="s_cedula" placeholder="Cedula" maxlength="10" value="">
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Estado:</b></label>
+                                        <select class="form-select fs-5 border border-dark" id="s_cmb_estado"
+                                            name="s_estado" required>
+                                            <option disabled selected value="">Selecciona</option>
+                                            <option value="ACTIVO">ACTIVO</option>
+                                            <option value="INACTIVO">INACTIVO</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Nombre:</b></label>
+                                        <input type="text" class="form-control fs-5 border border-dark" id="s_ciudadano"
+                                            name="s_ciudadano" placeholder="Nombre Completo" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Correo:</b></label>
+                                        <input type="email" class="form-control fs-5 border border-dark" id="s_correo"
+                                            name="s_correo" placeholder="Correo" value="" required>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Área:</b></label>
+                                        <select class="form-select fs-5 border border-dark" id="s_cmb_area"
+                                            name="s_area" required>
+                                            <option disabled selected value="">Selecciona</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Jefe:</b></label>
+                                        <select class="form-select fs-5 border border-dark" id="s_cmb_jefe"
+                                            name="s_jefe" required>
+                                            <option disabled selected value="">Selecciona</option>
+                                            <option value="SI">SI</option>
+                                            <option value="NO">NO</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Cargo:</b></label>
+                                        <select class="form-select fs-5 border border-dark" id="s_cmb_cargo"
+                                            name="s_cargo" required>
+                                            <option disabled selected value="">Selecciona</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <label class="form-label fs-5"><b>* Modalidad:</b></label>
+                                        <select class="form-select fs-5 border border-dark" id="s_cmb_modalidad"
+                                            name="s_modalidad" required>
+                                            <option disabled selected value="">Selecciona</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <span id="mensaje_servidor"></span>
+
+                        <button type="submit" class="btn btn-success" id="save-servidor"><i class="fas fa-save"></i>
+                            Guardar</button>
+
+                        <button type="submit" class="btn btn-primary" id="edit-servidor"><i class="fas fa-save"></i>
+                            Editar</button>
+
+                        <a type="button" class="btn btn-secondary mb-1" id="carnet-servidor" target="_blank"><i class="fas fa-print"></i> Ver Carnet</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/servidores.js"></script>
+
+</div>

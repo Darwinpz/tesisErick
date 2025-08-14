@@ -1,0 +1,126 @@
+<div class="tab-pane fade" id="v-pills-actas" role="tabpanel" aria-labelledby="v-pills-actas-tab">
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#actaModal">
+                <i class="fas fa-file-pdf"></i> Crear Acta
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-actas"><i class="fa fa-repeat"></i> Actualizar Actas
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_actas.html' %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="actaModal" tabindex="-1" aria-labelledby="actaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="actaModalLabel"><b>Crear Acta</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" id="form_acta">
+                    <div class="modal-body">
+
+                        <div class="modal-body g-3">
+
+                            <div class="row">
+
+                                <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+
+                                    <div class="card border border-dark">
+                                        <div class="card-body">
+
+                                            <div class="row">
+
+                                                <div class="col-6 col-lg-6 col-md-12 col-sm-12">
+                                                    <label class="form-label fs-5"><b>* Entrega:</b></label>
+                                                    <select class="form-select fs-5 border border-dark mb-2"
+                                                        id="act_cmb_entrega" name="act_entrega" required>
+                                                        <option disabled selected value="">Selecciona</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                {% include '/views/inventario/tables/table_buscar_inventarios.html' %}
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+
+                                <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+
+                                    <div class="card border border-dark">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6 col-lg-6 col-md-12 col-sm-12">
+                                                    <label class="form-label fs-5"><b>* Recibe:</b></label>
+                                                    <select class="form-select fs-5 border border-dark" id="act_cmb_recibe"
+                                                        name="act_recibe" required>
+                                                        <option disabled selected value="">Selecciona</option>
+                                                    </select>
+                                                </div>
+    
+                                                <div class="col-6 col-lg-6 col-md-12 col-sm-12">
+                                                    <label class="form-label fs-5"><b>* Responsable:</b></label>
+                                                    <select class="form-select fs-5 border border-dark" id="act_cmb_veedor"
+                                                        name="act_veedor" required>
+                                                        <option disabled selected value="">Selecciona</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <input type="text" class="form-control fs-5 border border-dark" id="act_codigo"
+                                name="act_codigo" value="" style="display: none;">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <span id="mensaje_acta"></span>
+
+                        <button type="submit" class="btn btn-success" id="save-acta"><i class="fas fa-save"></i>
+                            Guardar</button>
+
+                        <a href="" class="btn btn-primary" id="print-acta" target="_blank"><i class="fas fa-print"></i>
+                            Imprimir</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/buscar_inventarios.js"></script>
+    <script src="/js/actas.js"></script>
+
+</div>

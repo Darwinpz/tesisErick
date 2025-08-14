@@ -1,0 +1,243 @@
+<div class="tab-pane fade" id="v-pills-inventario" role="tabpanel" aria-labelledby="v-pills-inventario-tab">
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#inventarioModal">
+                <i class="fas fa-box"></i> Agregar inventario
+            </button>
+
+            <button type="button" class="btn btn-primary btn-block mb-1" id="btn-refresh-inventarios"><i class="fa fa-repeat"></i> Actualizar Inventario
+            </button>
+
+            <a type="button" class="btn btn-secondary btn-block mb-1" href="/rpt/inventario" target="_blank"><i
+                    class="fas fa-print"></i> Reporte General de Inventario</a></a>
+
+            <button type="button" class="btn btn-warning btn-block mb-1" data-bs-toggle="modal"
+                data-bs-target="#reportesModal">
+                <i class="fas fa-print"></i> Reporte Detallado de Inventario
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+
+            {% include '/views/inventario/tables/table_inventario.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+
+    {% include '/views/inventario/reporte.html' %}
+
+    <div class="modal fade" id="inventarioModal" tabindex="-1" aria-labelledby="inventarioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="inventarioModalLabel"><b>Agregar inventario</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="post" id="form_inventario" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <div class="modal-body" style="align-items: center;">
+
+                            <div class="row g-3 mb-2 align-items-center">
+
+                                <div class="col col-lg-3 col-sm-12 mb-2">
+
+                                    <div class="card" id="foto-inventario">
+
+                                        <div class="border border-dark d-flex justify-content-center"
+                                            style="height:300px">
+
+                                            <img id="img_inventario"
+                                                src="/img/caja.png"
+                                                class="img-fluid">
+
+                                        </div>
+
+                                        <input type="file" accept="image/*" name="i_foto"
+                                            class="form-control border border-dark mt-2"
+                                            onchange="document.getElementById('img_inventario').src = window.URL.createObjectURL(this.files[0])">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col col-lg-9">
+
+                                    <div class="row g-3">
+
+                                        <div class="col-lg-5 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Categoria:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_categoria"
+                                                name="i_categoria" required>
+                                                <option disabled selected value="">Selecciona</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-7 col-md-12 col-sm-12" id="i_div_nombre">
+                                            <label class="form-label fs-5"><b>* Nombre:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark"
+                                                id="i_nombre" name="i_nombre" placeholder="Nombre del Producto"
+                                                maxlength="56" max="55" value="" required>
+
+                                            <input type="text" class="form-control fs-5 border border-dark" id="i_id"
+                                                name="i_id" style="display: none;">
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>Precio:</b></label>
+                                            <input type="number" class="form-control fs-5 border border-dark"
+                                                id="i_precio" name="i_precio" placeholder="Precio estimado" min="0"
+                                                value="0" required>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Código:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark"
+                                                id="i_codigo" name="i_codigo" placeholder="Código" value="" required
+                                                readonly>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Serie:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark" id="i_serie"
+                                                name="i_serie" placeholder="Serie" value="" required readonly>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>Cuenta Contable:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark"
+                                                id="i_cta_contable" name="i_cta_contable" placeholder="Código Contable"
+                                                maxlength="20" max="20">
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Estado:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_estado"
+                                                name="i_estado" required>
+                                                <option disabled selected value="">Selecciona</option>
+                                                <option value="OPERATIVO">OPERATIVO</option>
+                                                <option value="REGULAR">REGULAR</option>
+                                                <option value="BAJA">BAJA</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Forma de Adquisición:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_adquisicion"
+                                                name="i_adquisicion" required>
+                                                <option disabled selected value="">Selecciona</option>
+                                                <option value="COMPRA">COMPRA</option>
+                                                <option value="ADQUIRIDO">ADQUIRIDO</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Marca:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_marca"
+                                                name="i_marca">
+                                                <option disabled selected value="">Selecciona</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>* Modelo:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_modelo"
+                                                name="i_modelo">
+                                                <option disabled selected value="">Selecciona</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>IP:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark" id="i_ip"
+                                                name="i_ip" placeholder="Dirección IP" value="" readonly>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>MAC:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark" id="i_mac"
+                                                name="i_mac" placeholder="Dirección MAC" value="" readonly>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>Custodio:</b></label>
+                                            <select class="form-select fs-5 border border-dark" id="i_cmb_custodio"
+                                                name="i_custodio">
+                                                <option disabled selected value="">Selecciona</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <label class="form-label fs-5"><b>Descripción/Observación:</b></label>
+                                            <input type="text" class="form-control fs-5 border border-dark"
+                                                id="i_descripcion" name="i_descripcion"
+                                                placeholder="Observación corta del Producto" maxlength="56" max="55">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row g-3 mt-2">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12" id="items">
+
+                                    <div class="row mb-2">
+
+                                        <div class="col-10">
+                                            <label class="form-label fs-5"><b>Componentes Adicionales:</b></label>
+                                        </div>
+
+                                        <div class="col text-end">
+                                            <label class="btn btn-success" onclick="addopciones()">+</label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <span id="mensaje_inventario"></span>
+
+                        <button type="submit" class="btn btn-success" id="save-inventario"><i class="fas fa-save"></i>
+                            Guardar</button>
+
+                        <button type="submit" class="btn btn-primary" id="edit-inventario"><i class="fas fa-save"></i>
+                            Editar</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/inventario.js"></script>
+
+
+</div>

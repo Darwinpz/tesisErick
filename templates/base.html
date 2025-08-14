@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>AfivaNet</title>
+
+    <link href="/css/fonts.css" rel="stylesheet">
+    <!-- Boostrap 5-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/fontawesome.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
+    
+</head>
+
+<body style="background-color: #f0f2f5">
+
+    {% if alert %}
+
+    <div class="position-fixed end-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="{{ url_for('public', filename='favicon.ico') }}" height="15px" class="rounded me-2">
+                <strong class="me-auto">Mensaje</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-{{alert.tipo}} fs-6">
+                {{alert.message}}
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    {% block body %}{% endblock %}
+
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

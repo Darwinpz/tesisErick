@@ -1,0 +1,72 @@
+<!-- Modal -->
+<div class="modal fade" id="reportesModal" tabindex="-1" aria-labelledby="reportesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportesModalLabel"><b>Crear reportes</b></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" id="form_reportes">
+                <div class="modal-body">
+
+                    <div class="modal-body row g-3">
+
+                        <div class="col-md-12">
+                            <label class="form-label fs-5"><b>* Custodio:</b></label>
+                            <select class="form-select fs-5 border border-dark" id="rpt_cmb_custodio"
+                                name="rpt_custodio">
+                                <option disabled selected value="">Selecciona</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fs-5"><b>* Categoria:</b></label>
+                            <select class="form-select fs-5 border border-dark" id="rpt_cmb_categoria"
+                                name="rpt_categoria">
+                                <option disabled selected value="">Selecciona</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fs-5"><b>* Marca:</b></label>
+                            <select class="form-select fs-5 border border-dark" id="rpt_cmb_marca"
+                                name="rpt_marca">
+                                <option disabled selected value="">Selecciona</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fs-5"><b>* Modelo:</b></label>
+                            <select class="form-select fs-5 border border-dark" id="rpt_cmb_modelo"
+                                name="rpt_modelo">
+                                <option disabled selected value="">Selecciona</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fs-5"><b>* Estado:</b></label>
+                            <select class="form-select fs-5 border border-dark" id="rpt_cmb_estado"
+                                name="rpt_estado">
+                                <option disabled selected value="">Selecciona</option>
+                                <option value="OPERATIVO">OPERATIVO</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="BAJA">BAJA</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+
+                    <span id="mensaje_reportes"></span>
+
+                    <button type="submit" class="btn btn-success" id="crear-reporte"><i class="fas fa-print"></i> Generar</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/reportes.js"></script>
